@@ -1,0 +1,16 @@
+.tableContainer {
+    margin: 2rem auto;
+    width: 80%;
+}
+
+.table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.table th,
+.table td {
+    border: 1px solid #ddd;
+    padding: 0.5rem;
+    text-align: left;
+}

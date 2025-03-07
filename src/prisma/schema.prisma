@@ -1,0 +1,39 @@
+generator client {
+  provider        = "prisma-client-js"
+  previewFeatures = ["typedSql"]
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = "file:./dev.db"
+}
+
+enum StatusEnum {
+  accepted
+  rejected
+  due_interview
+  created
+}
+
+model Vacancy {
+  id           Int           @id @default(autoincrement())
+  title        String
+  requirements String
+  applications Application[]
+}
+
+model Applicant {
+  id           Int           @id @default(autoincrement())
+  lastname     String
+  experience   String
+  applications Application[]
+}
+
+model Application {
+  id           Int        @id @default(autoincrement())
+  applicant_id Int
+  vacancy_id   Int
+  status       StatusEnum
+  applicant    Applicant  @relation(fields: [applicant_id], references: [id])
+  vacancy      Vacancy    @relation(fields: [vacancy_id], references: [id])
+}
