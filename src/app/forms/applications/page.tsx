@@ -77,7 +77,7 @@ export default function ApplicationForm() {
                 required
             >
                 <option value={0}>Не выбрано</option>
-                {Object.keys(StatusEnum).map(key => <option value={key}>{StatusEnum[key]}</option>)}
+                {Object.keys(StatusEnum).map(key => <option key={key} value={key}>{StatusEnum[key]}</option>)}
             </select>
             <button type="submit">Добавить</button>
         </form>
