@@ -14,7 +14,7 @@ export default async function ApplicantReport() {
                 <thead>
                 <tr>
                     <th>Соискатель</th>
-                    {Object.values(StatusEnum).map(status => <th>{status}</th>)}
+                    {Object.values(StatusEnum).map(status => <th key={status}>{status}</th>)}
                 </tr>
                 </thead>
                 <tbody>

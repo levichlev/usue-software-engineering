@@ -14,7 +14,7 @@ export default async function VacancyReport() {
                 <thead>
                 <tr>
                     <th>Вакансия</th>
-                    {Object.values(StatusEnum).map(status => <th>{status}</th>)}
+                    {Object.values(StatusEnum).map(status => <th key={status}>{status}</th>)}
                 </tr>
                 </thead>
                 <tbody>
